@@ -1,0 +1,44 @@
+[2.007s] Invoking command in '/home/benjamin/tito_ws/src/turtlebot3/turtlebot3_teleop': PYTHONPATH=/home/benjamin/tito_ws/build/turtlebot3_teleop/prefix_override:/home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/turtlebot3_teleop build --build-base /home/benjamin/tito_ws/build/turtlebot3_teleop/build install --record /home/benjamin/tito_ws/build/turtlebot3_teleop/install.log --single-version-externally-managed
+[2.356s] running egg_info
+[2.356s] creating ../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info
+[2.358s] writing ../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/PKG-INFO
+[2.358s] writing dependency_links to ../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/dependency_links.txt
+[2.358s] writing entry points to ../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/entry_points.txt
+[2.359s] writing requirements to ../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/requires.txt
+[2.359s] writing top-level names to ../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/top_level.txt
+[2.359s] writing manifest file '../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/SOURCES.txt'
+[2.360s] reading manifest file '../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/SOURCES.txt'
+[2.361s] writing manifest file '../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/SOURCES.txt'
+[2.361s] running build
+[2.361s] running build_py
+[2.361s] creating /home/benjamin/tito_ws/build/turtlebot3_teleop/build
+[2.362s] creating /home/benjamin/tito_ws/build/turtlebot3_teleop/build/lib
+[2.362s] creating /home/benjamin/tito_ws/build/turtlebot3_teleop/build/lib/turtlebot3_teleop
+[2.362s] copying turtlebot3_teleop/__init__.py -> /home/benjamin/tito_ws/build/turtlebot3_teleop/build/lib/turtlebot3_teleop
+[2.362s] creating /home/benjamin/tito_ws/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script
+[2.363s] copying turtlebot3_teleop/script/teleop_keyboard.py -> /home/benjamin/tito_ws/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script
+[2.363s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.363s]   warnings.warn(
+[2.363s] copying turtlebot3_teleop/script/__init__.py -> /home/benjamin/tito_ws/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script
+[2.363s] running install
+[2.363s] running install_lib
+[2.364s] creating /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages/turtlebot3_teleop
+[2.364s] creating /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages/turtlebot3_teleop/script
+[2.364s] copying /home/benjamin/tito_ws/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script/teleop_keyboard.py -> /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages/turtlebot3_teleop/script
+[2.364s] copying /home/benjamin/tito_ws/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script/__init__.py -> /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages/turtlebot3_teleop/script
+[2.364s] copying /home/benjamin/tito_ws/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/__init__.py -> /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages/turtlebot3_teleop
+[2.364s] byte-compiling /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages/turtlebot3_teleop/script/teleop_keyboard.py to teleop_keyboard.cpython-310.pyc
+[2.365s] byte-compiling /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages/turtlebot3_teleop/script/__init__.py to __init__.cpython-310.pyc
+[2.365s] byte-compiling /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages/turtlebot3_teleop/__init__.py to __init__.cpython-310.pyc
+[2.365s] running install_data
+[2.366s] creating /home/benjamin/tito_ws/install/turtlebot3_teleop/share/ament_index
+[2.366s] creating /home/benjamin/tito_ws/install/turtlebot3_teleop/share/ament_index/resource_index
+[2.366s] creating /home/benjamin/tito_ws/install/turtlebot3_teleop/share/ament_index/resource_index/packages
+[2.366s] copying resource/turtlebot3_teleop -> /home/benjamin/tito_ws/install/turtlebot3_teleop/share/ament_index/resource_index/packages
+[2.366s] copying package.xml -> /home/benjamin/tito_ws/install/turtlebot3_teleop/share/turtlebot3_teleop
+[2.367s] running install_egg_info
+[2.368s] Copying ../../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info to /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages/turtlebot3_teleop-2.1.5-py3.10.egg-info
+[2.368s] running install_scripts
+[2.398s] Installing teleop_keyboard script to /home/benjamin/tito_ws/install/turtlebot3_teleop/lib/turtlebot3_teleop
+[2.398s] writing list of installed files to '/home/benjamin/tito_ws/build/turtlebot3_teleop/install.log'
+[2.529s] Invoked command in '/home/benjamin/tito_ws/src/turtlebot3/turtlebot3_teleop' returned '0': PYTHONPATH=/home/benjamin/tito_ws/build/turtlebot3_teleop/prefix_override:/home/benjamin/tito_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/turtlebot3_teleop build --build-base /home/benjamin/tito_ws/build/turtlebot3_teleop/build install --record /home/benjamin/tito_ws/build/turtlebot3_teleop/install.log --single-version-externally-managed

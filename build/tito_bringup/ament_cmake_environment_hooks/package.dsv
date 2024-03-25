@@ -1,0 +1,4 @@
+source;share/tito_bringup/local_setup.bash
+source;share/tito_bringup/local_setup.dsv
+source;share/tito_bringup/local_setup.sh
+source;share/tito_bringup/local_setup.zsh

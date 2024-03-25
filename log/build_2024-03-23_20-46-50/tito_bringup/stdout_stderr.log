@@ -1,0 +1,52 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.6 (/home/benjamin/ros2_humble/install/ament_cmake/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+-- Found urdf: 2.6.0 (/home/benjamin/ros2_humble/install/urdf/share/urdf/cmake)
+-- Found xacro: 2.0.8 (/opt/ros/humble/share/xacro/cmake)
+-- Found ament_lint_auto: 0.12.9 (/home/benjamin/ros2_humble/install/ament_lint_auto/share/ament_lint_auto/cmake)
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/benjamin/tito_ws/build/tito_bringup
+-- Install configuration: ""
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//urdf
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//urdf/tito.urdf
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//urdf/TITO Moves v1.csv
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//rviz
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//rviz/rviz.rviz
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/spawn_tito.launch.py
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/tito_visualize.launch.py
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/start_world.launch.py
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/spawn_gazebo.launch.xml
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/tito_empty.world
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/ament_index/resource_index/package_run_dependencies/tito_bringup
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/ament_index/resource_index/parent_prefix_path/tito_bringup
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/environment/ament_prefix_path.sh
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/environment/ament_prefix_path.dsv
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/environment/path.sh
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/environment/path.dsv
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/local_setup.bash
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/local_setup.sh
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/local_setup.zsh
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/local_setup.dsv
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/package.dsv
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/ament_index/resource_index/packages/tito_bringup
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/cmake/tito_bringupConfig.cmake
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/cmake/tito_bringupConfig-version.cmake
+-- Installing: /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/package.xml

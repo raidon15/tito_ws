@@ -1,0 +1,8 @@
+<?xml version='1.0' ?>
+<launch>
+  <!-- Publish URDF file in robot_description topic -->
+  <include file="$(find-pkg-share tito_bringup)/launch/tito_visualize.launch.py"/>
+  <!-- Read robot_description an spawn in gazebo running sim -->
+  <include file="$(find-pkg-share tito_bringup)/launch/spawn_tito.launch.py"/>
+  <!-- Load the controllers -->
+</launch>
