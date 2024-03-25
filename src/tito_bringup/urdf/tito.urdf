@@ -79,15 +79,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine1.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine1_joint"
@@ -191,15 +183,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine2.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine2_joint"
@@ -303,15 +287,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine3.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine3_joint"
@@ -416,15 +392,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine4.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine4_joint"
@@ -528,15 +496,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine5.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine5_joint"
@@ -640,15 +600,7 @@
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine6.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine6_joint"
