@@ -1,0 +1,716 @@
+<robot  name="tito_robot">
+  <link
+    name="tito">
+    <inertial>
+      <origin
+        xyz="-0.014057 -2.8025E-05 -0.034735"
+        rpy="0 0 0" />
+      <mass value="2" />
+      <inertia
+        ixx="0.0037485"
+        ixy="6.2347E-07"
+        ixz="-4.228E-06"
+        iyy="0.005373"
+        iyz="2.0054E-08"
+        izz="0.0085891" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/tito.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/tito.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="engine1">
+    <inertial>
+      <origin
+        xyz="-0.049497 -1.7523E-05 -3.3692E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.15" />
+      <inertia
+        ixx="1.0791E-06"
+        ixy="3.2383E-10"
+        ixz="-5.8793E-11"
+        iyy="1.356E-06"
+        iyz="-2.9706E-11"
+        izz="1.3576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    
+  </link>
+  <joint
+    name="engine1_joint"
+    type="fixed">
+    <origin
+      xyz="-0.124 -0.032888 -0.059985"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="tito" />
+    <child
+      link="engine1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+  <link
+    name="leg1">
+    <inertial>
+      <origin
+        xyz="-0.0080118 -0.012692 -0.00072115"
+        rpy="0 3.14 3.14" />
+      <mass
+        value="0.06" />
+      <inertia
+        ixx="5.0695E-05"
+        ixy="6.1207E-06"
+        ixz="1.4584E-06"
+        iyy="1.9614E-05"
+        iyz="-5.585E-06"
+        izz="6.5188E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg1_new.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg1_new.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg1_joint"
+    type="continuous">
+    <origin
+      xyz="-0.10151 0 0"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="engine1" />
+    <child
+      link="leg1" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="10000" velocity="1000" />
+
+  </joint>
+  <link
+    name="engine2">
+    <inertial>
+      <origin
+        xyz="-0.049497 -1.7523E-05 -3.3692E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.15" />
+      <inertia
+        ixx="1.0791E-06"
+        ixy="3.2383E-10"
+        ixz="-5.8793E-11"
+        iyy="1.356E-06"
+        iyz="-2.9706E-11"
+        izz="1.3576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    
+  </link>
+  <joint
+    name="engine2_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.057888 -0.059985"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="tito" />
+    <child
+      link="engine2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg2">
+    <inertial>
+      <origin
+        xyz="-0.0080118 -0.012692 -0.00072115"
+        rpy="0 3.14 3.14" />
+      <mass
+        value="0.06" />
+      <inertia
+        ixx="5.0695E-05"
+        ixy="6.1207E-06"
+        ixz="1.4584E-06"
+        iyy="1.9614E-05"
+        iyz="-5.585E-06"
+        izz="6.5188E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg2_joint"
+    type="continuous">
+    <mimic joint="leg1_joint"/>
+    <origin
+      xyz="-0.10151 0 0"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="engine2" />
+    <child
+      link="leg2" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="10000" velocity="1000" />
+  </joint>
+  <link
+    name="engine3">
+    <inertial>
+      <origin
+        xyz="-0.049497 -1.7523E-05 -3.3692E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.15" />
+      <inertia
+        ixx="1.0791E-06"
+        ixy="3.2383E-10"
+        ixz="-5.8793E-11"
+        iyy="1.356E-06"
+        iyz="-2.9706E-11"
+        izz="1.3576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    
+  </link>
+  <joint
+    name="engine3_joint"
+    type="fixed">
+    
+    <origin
+      xyz="0.124 -0.032888 -0.059985"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="tito" />
+    <child
+      link="engine3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg3">
+    <inertial>
+      <origin
+        xyz="-0.0080118 -0.012692 -0.00072115"
+        rpy="0 3.14 3.14" />
+      <mass
+        value="0.06" />
+      <inertia
+        ixx="5.0695E-05"
+        ixy="6.1207E-06"
+        ixz="1.4584E-06"
+        iyy="1.9614E-05"
+        iyz="-5.585E-06"
+        izz="6.5188E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg3.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg3_joint"
+    type="continuous">
+    <mimic joint="leg1_joint"/>
+    <origin
+      xyz="-0.10151237169951 0 0"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="engine3" />
+    <child
+      link="leg3" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="10000" velocity="1000" />
+  </joint>
+  <link
+    name="engine4">
+    <inertial>
+      <origin
+        xyz="-0.049497 1.7523E-05 3.3692E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.15" />
+      <inertia
+        ixx="1.0791E-06"
+        ixy="-3.2383E-10"
+        ixz="5.8793E-11"
+        iyy="1.356E-06"
+        iyz="-2.9706E-11"
+        izz="1.3576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    
+  </link>
+  <joint
+    name="engine4_joint"
+    type="fixed">
+    <origin
+      xyz="-0.124 0.032888 -0.059985"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="tito" />
+    <child
+      link="engine4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg4">
+    <inertial>
+      <origin
+        xyz="-0.0080118 -0.012692 0.016721"
+        rpy="0 3.14 3.14" />
+      <mass
+        value="0.06" />
+      <inertia
+        ixx="5.0695E-05"
+        ixy="6.1207E-06"
+        ixz="-1.4584E-06"
+        iyy="1.9614E-05"
+        iyz="5.585E-06"
+        izz="6.5188E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg4.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg4_joint"
+    type="continuous">
+    <mimic joint="leg1_joint"/>
+    <origin
+      xyz="-0.0855123716995091 0 0"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="engine4" />
+    <child
+      link="leg4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit effort="10000" velocity="1000" />
+  </joint>
+  <link
+    name="engine5">
+    <inertial>
+      <origin
+        xyz="-0.049497 1.7523E-05 3.3692E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.15" />
+      <inertia
+        ixx="1.0791E-06"
+        ixy="-3.2383E-10"
+        ixz="5.8793E-11"
+        iyy="1.356E-06"
+        iyz="-2.9706E-11"
+        izz="1.3576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    
+  </link>
+  <joint
+    name="engine5_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.057888 -0.059985"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="tito" />
+    <child
+      link="engine5" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg5">
+    <inertial>
+      <origin
+        xyz="-0.0080118 -0.012692 0.016721"
+        rpy="0 3.14 3.14" />
+      <mass
+        value="0.06" />
+      <inertia
+        ixx="5.0695E-05"
+        ixy="6.1207E-06"
+        ixz="-1.4584E-06"
+        iyy="1.9614E-05"
+        iyz="5.585E-06"
+        izz="6.5188E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg5.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg5_joint"
+    type="continuous">
+    <mimic joint="leg1_joint"/>
+    <origin
+      xyz="-0.0855123716995093 0 0"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="engine5" />
+    <child
+      link="leg5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit effort="10000" velocity="1000" />
+  </joint>
+  <link
+    name="engine6">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.15" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    
+  </link>
+  <joint
+    name="engine6_joint"
+    type="fixed">
+    <origin
+      xyz="0.124 0.0328876283004872 -0.0599846310393008"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="tito" />
+    <child
+      link="engine6" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg6">
+    <inertial>
+      <origin
+        xyz="-0.0080118 -0.012692 0.016721"
+        rpy="0 3.14 3.14" />
+      <mass
+        value="0.06" />
+      <inertia
+        ixx="5.0695E-05"
+        ixy="6.1207E-06"
+        ixz="-1.4584E-06"
+        iyy="1.9614E-05"
+        iyz="5.585E-06"
+        izz="6.5188E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg6.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 3.14" />
+      <geometry>
+        <mesh
+          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/leg6.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg6_joint"
+    type="continuous">
+    <mimic joint="leg1_joint"/>
+    <origin
+      xyz="-0.0855123716995156 0 0"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="engine6" />
+    <child
+      link="leg6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit effort="10000" velocity="1000" />
+  </joint>
+
+
+  <gazebo reference="leg1">
+    <kp>1000000000000000000000000000.0</kp>
+    <kd>1000000000000000000000000000.0</kd>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="leg2">
+    <kp>1000000000000000000000000000.0</kp>
+    <kd>1000000000000000000000000000.0</kd>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="leg3">
+    <kp>1000000000000000000000000000.0</kp>
+    <kd>1000000000000000000000000000.0</kd>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="leg4">
+    <kp>1000000000000000000000000000.0</kp>
+    <kd>1000000000000000000000000000.0</kd>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="leg5">
+    <kp>1000000000000000000000000000.0</kp>
+    <kd>1000000000000000000000000000.0</kd>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="leg6">
+    <kp>1000000000000000000000000000.0</kp>
+    <kd>1000000000000000000000000000.0</kd>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+ 
+
+  <!-- Differential Drive Plugin -->
+  <gazebo>
+      <plugin
+          filename="libignition-gazebo-diff-drive-system.so"
+          name="ignition::gazebo::systems::DiffDrive">
+          <left_joint>leg1_joint</left_joint>
+          <left_joint>leg2_joint</left_joint>
+          <left_joint>leg3_joint</left_joint>
+
+          <right_joint>leg4_joint</right_joint>
+          <right_joint>leg5_joint</right_joint>
+          <right_joint>leg6_joint</right_joint>
+          <wheel_separation>1.66</wheel_separation>
+          <wheel_radius>0.4</wheel_radius>
+          <odom_publish_frequency>20</odom_publish_frequency>
+          <topic>cmd_vel</topic>
+          <odom_topic>odom</odom_topic>
+          <tf_topic>tf</tf_topic>
+          <frame_id>odom</frame_id>
+          <child_frame_id>tito</child_frame_id>
+      </plugin>
+  </gazebo>
+
+ 
+
+  
+
+</robot>

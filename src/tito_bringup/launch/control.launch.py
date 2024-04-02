@@ -25,12 +25,18 @@ def generate_launch_description():
         output="screen",
     )
 
-    
+    spawn_controller_pos = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["position_controller", "--controller-manager", "/controller_manager"],
+        output="screen",
+    )
 
     # create and return launch description object
     return LaunchDescription(
         [   
             spawn_controller,
-            spawn_controller_vel,
+            #spawn_controller_vel,
+            spawn_controller_pos,
         ]
     )

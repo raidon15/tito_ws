@@ -5,4 +5,5 @@
   <!-- Read robot_description an spawn in gazebo running sim -->
   <include file="$(find-pkg-share tito_bringup)/launch/spawn_tito.launch.py"/>
   <!-- Load the controllers -->
+  <include file="$(find-pkg-share tito_bringup)/launch/control.launch.py"/>
 </launch>

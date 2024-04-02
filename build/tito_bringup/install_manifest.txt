@@ -1,13 +1,24 @@
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//urdf/tito_dif_drive.urdf
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//urdf/tito.urdf
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//urdf/TITO Moves v1.csv
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//rviz/rviz.rviz
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/ignition_world.launch.py
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/spawn_tito.launch.py
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/tito_visualize.launch.py
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/control.launch.py
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/start_world.launch.py
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/spawn_ignition.launch.py
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/spawn_gazebo.launch.xml
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/model.world
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/tito_empty.world
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/thumbnails/1.png
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/garden.sdf
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/model.sdf
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/materials/textures/moon_normal.png
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/materials/textures/moon_diffuse.png
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/materials/textures/white_alpha.png
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/model.config
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//worlds/dem/moon.tif
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//models/model.sdf
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//models/moon_diffuse.png
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//models/1.png

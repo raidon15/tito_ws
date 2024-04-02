@@ -39,8 +39,8 @@ def generate_launch_description():
         executable='robot_state_publisher',
         name='robot_state_publisher_node',
         emulate_tty=True,
-        parameters=[{'use_sim_time': True, 'robot_description': robot_description_content}],
-        output="screen"
+        parameters=[robot_description],
+        output="both"
     )
     
     robot_controllers = PathJoinSubstitution(

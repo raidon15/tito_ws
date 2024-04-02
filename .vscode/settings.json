@@ -506,5 +506,6 @@
         "/home/benjamin/ros2_humble/install/ament_clang_tidy/lib/python3.10/site-packages",
         "/home/benjamin/ros2_humble/build/ament_clang_format",
         "/home/benjamin/ros2_humble/install/ament_clang_format/lib/python3.10/site-packages"
-    ]
+    ],
+    "ros.distro": "humble"
 }

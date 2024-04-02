@@ -1,16 +1,4 @@
 <robot  name="tito_robot">
-  
-  <link name="base_link">
-  </link>
-
-  
-  <joint name="base_link_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.1" />
-    <parent link="base_link" />
-    <child link="tito" />
-  </joint>
-
-
   <link
     name="tito">
     <inertial>
@@ -79,15 +67,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine1.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine1_joint"
@@ -191,15 +171,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine2.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine2_joint"
@@ -303,15 +275,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine3.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine3_joint"
@@ -416,15 +380,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine4.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine4_joint"
@@ -528,15 +484,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine5.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine5_joint"
@@ -640,15 +588,7 @@
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file:///home/benjamin/tito_ws/src/tito_bringup/meshes/engine6.STL" />
-      </geometry>
-    </collision>
+    
   </link>
   <joint
     name="engine6_joint"
@@ -772,7 +712,7 @@
  
   <!-- JOINT PUBLISHER -->
   <gazebo>
-    <plugin name="box_bot_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
+    <plugin name="tito_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
       <ros>
           <remapping>~/out:=joint_states</remapping>
       </ros>
@@ -788,17 +728,21 @@
     </plugin>
   </gazebo>
 
+ 
 
   <!-- Position Config -->
     <ros2_control name="GazeboSystem" type="system">
       <hardware>
         <plugin>mock_components/GenericSystem</plugin>
+        <param name="calculate_dynamics">true</param>
       </hardware>
 
       <joint name="leg1_joint">
-        <command_interface name="velocity">
+        <command_interface name="position">
           <param name="min">-2.0</param>
           <param name="max">2.0</param>
+          <param name="initial_value">1.0</param> 
+
         </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
@@ -808,7 +752,7 @@
       <joint name="leg2_joint">
         <param name="mimic">leg1_joint</param>
         <param name="multiplier">1</param>
-        <command_interface name="velocity"/>
+        <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
@@ -816,7 +760,7 @@
       <joint name="leg3_joint">
         <param name="mimic">leg1_joint</param>
         <param name="multiplier">1</param>
-        <command_interface name="velocity"/>
+        <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
@@ -824,7 +768,7 @@
       <joint name="leg4_joint">
         <param name="mimic">leg1_joint</param>
         <param name="multiplier">1</param>
-        <command_interface name="velocity"/>
+        <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
@@ -832,7 +776,7 @@
       <joint name="leg5_joint">
         <param name="mimic">leg1_joint</param>
         <param name="multiplier">1</param>
-        <command_interface name="velocity"/>
+        <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
@@ -840,13 +784,12 @@
       <joint name="leg6_joint">
         <param name="mimic">leg1_joint</param>
         <param name="multiplier">1</param>
-        <command_interface name="velocity"/>
+        <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
   </ros2_control>
-
 
   <gazebo>
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
@@ -854,5 +797,7 @@
       <robot_param_node>/robot_state_publisher_node</robot_param_node>
     </plugin>
   </gazebo>
+
+  
 
 </robot>
