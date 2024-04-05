@@ -821,8 +821,14 @@ generate_parameter_library_DIR:PATH=/opt/ros/humble/share/generate_parameter_lib
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/home/benjamin/ros2_humble/install/geometry_msgs/share/geometry_msgs/cmake
 
+//The directory containing a CMake configuration file for gz_ros2_control.
+gz_ros2_control_DIR:PATH=gz_ros2_control_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for hardware_interface.
 hardware_interface_DIR:PATH=/home/benjamin/ws_moveit/install/hardware_interface/share/hardware_interface/cmake
+
+//The directory containing a CMake configuration file for ign_ros2_control.
+ign_ros2_control_DIR:PATH=/home/benjamin/ros_ign/install/ign_ros2_control/share/ign_ros2_control/cmake
 
 //The directory containing a CMake configuration file for ignition-cmake2.
 ignition-cmake2_DIR:PATH=/usr/share/cmake/ignition-cmake2
@@ -867,7 +873,7 @@ lifecycle_msgs_DIR:PATH=/home/benjamin/ros2_humble/install/lifecycle_msgs/share/
 octomap_DIR:PATH=/opt/ros/humble/share/octomap
 
 //Path to a library.
-onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so
+onelib:FILEPATH=/home/benjamin/ros2_humble/install/urdfdom/lib/liburdfdom_world.so
 
 //Path to a library.
 onelibd:FILEPATH=onelibd-NOTFOUND

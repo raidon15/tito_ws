@@ -684,30 +684,16 @@
     <mu2>10.0</mu2>
     <material>Gazebo/Red</material>
   </gazebo>
- 
 
-  <!-- Differential Drive Plugin -->
   <gazebo>
-      <plugin
-          filename="libignition-gazebo-diff-drive-system.so"
-          name="ignition::gazebo::systems::DiffDrive">
-          <left_joint>leg1_joint</left_joint>
-          <left_joint>leg2_joint</left_joint>
-          <left_joint>leg3_joint</left_joint>
-
-          <right_joint>leg4_joint</right_joint>
-          <right_joint>leg5_joint</right_joint>
-          <right_joint>leg6_joint</right_joint>
-          <wheel_separation>1.66</wheel_separation>
-          <wheel_radius>0.4</wheel_radius>
-          <odom_publish_frequency>20</odom_publish_frequency>
-          <topic>cmd_vel</topic>
-          <odom_topic>odom</odom_topic>
-          <tf_topic>tf</tf_topic>
-          <frame_id>odom</frame_id>
-          <child_frame_id>tito</child_frame_id>
+      <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control">
+        <robot_param>robot_description</robot_param>
+        <robot_param_node>robot_state_publisher</robot_param_node>
+        <parameters>$(find tito_bringup)/config/controller_velocity.yaml</parameters>
       </plugin>
   </gazebo>
+
+
 
  
 

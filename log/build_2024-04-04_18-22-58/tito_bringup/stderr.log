@@ -1,0 +1,8 @@
+[33mCMake Warning at /home/benjamin/ros_ign/install/ign_ros2_control/share/ign_ros2_control/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'ign_ros2_control' exports library 'ign_ros2_control' which
+  couldn't be found
+Call Stack (most recent call first):
+  /home/benjamin/ros_ign/install/ign_ros2_control/share/ign_ros2_control/cmake/ign_ros2_controlConfig.cmake:41 (include)
+  CMakeLists.txt:17 (find_package)
+
+[0m

@@ -3,6 +3,7 @@
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//urdf/TITO Moves v1.csv
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//rviz/rviz.rviz
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/ignition_world.launch.py
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/ignition_complete.launch.py
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/spawn_tito.launch.py
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/tito_visualize.launch.py
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//launch/control.launch.py

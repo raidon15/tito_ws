@@ -14,7 +14,7 @@ find_package(xacro REQUIRED)
 find_package(ros2_control REQUIRED)
 find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
-find_package(gazebo_ros2_control REQUIRED)
+find_package(ign_ros2_control REQUIRED)
 find_package(joint_state_broadcaster REQUIRED)
 find_package(joint_trajectory_controller REQUIRED)
 

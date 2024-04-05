@@ -123,9 +123,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="leg1_joint"
-    type="continuous">
+  <joint name="leg1_joint" type="continuous">
     <origin
       xyz="-0.10151 0 0"
       rpy="0 -1.5708 0" />
@@ -136,10 +134,11 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      lower="-15"
+      upper="15"
+      effort="1000.0"
+      velocity="30" />
+    <dynamics damping="0.0" friction="0.0"/>
   </joint>
   <link
     name="engine2">
@@ -226,9 +225,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="leg2_joint"
-    type="continuous">
+  <joint    name="leg2_joint"    type="continuous">
     <mimic joint="leg1_joint"/>
     <origin
       xyz="-0.10151 0 0"
@@ -239,11 +236,12 @@
       link="leg2" />
     <axis
       xyz="0 0 1" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+     <limit
+      lower="-15"
+      upper="15"
+      effort="1000.0"
+      velocity="30" />
+    <dynamics damping="0.0" friction="0.0"/>
   </joint>
   <link
     name="engine3">
@@ -345,10 +343,10 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      lower="-15"
+      upper="15"
+      effort="1000.0"
+      velocity="30" />
   </joint>
   <link
     name="engine4">
@@ -449,10 +447,10 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      lower="-15"
+      upper="15"
+      effort="1000.0"
+      velocity="30" />
   </joint>
   <link
     name="engine5">
@@ -553,10 +551,10 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      lower="-15"
+      upper="15"
+      effort="1000.0"
+      velocity="30" />
   </joint>
   <link
     name="engine6">
@@ -657,147 +655,80 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      lower="-15"
+      upper="15"
+      effort="1000.0"
+      velocity="30" />
   </joint>
 
 
-  <gazebo reference="leg1">
-    <kp>1000000000000000000000000000.0</kp>
-    <kd>1000000000000000000000000000.0</kd>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
-    <material>Gazebo/Red</material>
-  </gazebo>
-
-  <gazebo reference="leg2">
-    <kp>1000000000000000000000000000.0</kp>
-    <kd>1000000000000000000000000000.0</kd>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="leg3">
-    <kp>1000000000000000000000000000.0</kp>
-    <kd>1000000000000000000000000000.0</kd>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="leg4">
-    <kp>1000000000000000000000000000.0</kp>
-    <kd>1000000000000000000000000000.0</kd>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="leg5">
-    <kp>1000000000000000000000000000.0</kp>
-    <kd>1000000000000000000000000000.0</kd>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="leg6">
-    <kp>1000000000000000000000000000.0</kp>
-    <kd>1000000000000000000000000000.0</kd>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
-    <material>Gazebo/Red</material>
-  </gazebo>
- 
 
  
-  <!-- JOINT PUBLISHER -->
-  <gazebo>
-    <plugin name="tito_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
-      <ros>
-          <remapping>~/out:=joint_states</remapping>
-      </ros>
-      <update_rate>30</update_rate>
-
-      <joint_name>leg1_joint</joint_name>
-      <joint_name>leg2_joint</joint_name>
-      <joint_name>leg3_joint</joint_name>
-      <joint_name>leg4_joint</joint_name>
-      <joint_name>leg5_joint</joint_name>
-      <joint_name>leg6_joint</joint_name>
-        
-    </plugin>
-  </gazebo>
-
- 
-
   <!-- Position Config -->
-    <ros2_control name="GazeboSystem" type="system">
+  <ros2_control name="IgnitionSystem" type="system">
       <hardware>
-        <plugin>mock_components/GenericSystem</plugin>
-        <param name="calculate_dynamics">true</param>
+        <plugin>ign_ros2_control/IgnitionSystem</plugin>
       </hardware>
 
       <joint name="leg1_joint">
-        <command_interface name="position">
-          <param name="min">-2.0</param>
-          <param name="max">2.0</param>
-          <param name="initial_value">1.0</param> 
-
+        <command_interface name="velocity">
+          <param name="min">-15</param>
+          <param name="max">15</param>
         </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
-      
       <joint name="leg2_joint">
         <param name="mimic">leg1_joint</param>
         <param name="multiplier">1</param>
-        <command_interface name="position"/>
+        <command_interface name="velocity"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
-      </joint>
+      </joint>     
       <joint name="leg3_joint">
         <param name="mimic">leg1_joint</param>
         <param name="multiplier">1</param>
-        <command_interface name="position"/>
+        <command_interface name="velocity"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
       <joint name="leg4_joint">
         <param name="mimic">leg1_joint</param>
-        <param name="multiplier">1</param>
-        <command_interface name="position"/>
+        <param name="multiplier">-1</param>
+        <command_interface name="velocity"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
-      </joint>
+      </joint>  
       <joint name="leg5_joint">
         <param name="mimic">leg1_joint</param>
-        <param name="multiplier">1</param>
-        <command_interface name="position"/>
+        <param name="multiplier">-1</param>
+        <command_interface name="velocity"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
-      </joint>
+      </joint>  
       <joint name="leg6_joint">
         <param name="mimic">leg1_joint</param>
-        <param name="multiplier">1</param>
-        <command_interface name="position"/>
+        <param name="multiplier">-1</param>
+        <command_interface name="velocity"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
-      </joint>
+      </joint>  
+          
   </ros2_control>
 
+ 
+
+
   <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+    <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
       <parameters>$(find tito_bringup)/config/controller_velocity.yaml</parameters>
-      <robot_param_node>/robot_state_publisher_node</robot_param_node>
     </plugin>
   </gazebo>
-
-  
 
 </robot>

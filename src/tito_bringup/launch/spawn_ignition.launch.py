@@ -13,7 +13,7 @@ def generate_launch_description():
     package_directory = get_package_share_directory(package_description)
 
     # Load URDF File #
-    urdf_file = 'tito_dif_drive.urdf'
+    urdf_file = 'tito.urdf'
     robot_desc_path = os.path.join(package_directory, "urdf", urdf_file)
     print("URDF ignition Loaded !")
 
