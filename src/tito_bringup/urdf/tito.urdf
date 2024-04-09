@@ -221,7 +221,7 @@
     <mimic joint="leg1_joint"/>
     <origin
       xyz="-0.10151 0 0"
-      rpy="0 -1.5708 3.1416" />
+      rpy="0 1.57 3.14" />
     <parent
       link="engine2" />
     <child
@@ -418,8 +418,8 @@
   <joint    name="leg4_joint"    type="continuous">
     <mimic joint="leg1_joint"/>
     <origin
-      xyz="-0.0855123716995091 0 0"
-      rpy="3.14159265358979 -1.5707963267949 3.1416" />
+      xyz="-0.0855123716995093 0 0"
+      rpy="0 1.57 0" />
     <parent
       link="engine4" />
     <child
@@ -615,8 +615,8 @@
     type="continuous">
     <mimic joint="leg1_joint"/>
     <origin
-      xyz="-0.0855123716995156 0 0"
-      rpy="3.14159265358979 -1.5707963267949 0" />
+      xyz="-0.0855123716995093 0 0"
+      rpy="0 1.57 0" />
     <parent
       link="engine6" />
     <child
