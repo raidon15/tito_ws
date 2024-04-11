@@ -13,17 +13,18 @@ class JointStateSubscriber(Node):
             self.joint_state_callback,  # callback function
             10  # QoS profile depth
         )
-        self.publisher_ = self.create_publisher(Float64MultiArray, '/velocity_controller/commands', 10)
+        self.publisher1_ = self.create_publisher(Float64MultiArray, '/velocity_controller1/commands', 10)
+        self.publisher2_ = self.create_publisher(Float64MultiArray, '/velocity_controller2/commands', 10)
         self.subscription  # prevent unused variable warning
 
-    def air_stage(self):
+    def air_stage(self,publisher):
         msg = Float64MultiArray()
-        msg.data = [2.5]  # Example velocity commands
-        self.publisher_.publish(msg)
-    def contact_stage(self):
+        msg.data = [7.5]  # Example velocity commands
+        publisher.publish(msg)
+    def contact_stage(self,publisher):
         msg = Float64MultiArray()
-        msg.data = [0.5]  # Example velocity commands
-        self.publisher_.publish(msg)
+        msg.data = [1.5]  # Example velocity commands
+        publisher.publish(msg)
     def multivalue(self,angle):
         if angle > 6.28318530718:
             angle = angle - 6.28318530718
@@ -32,15 +33,23 @@ class JointStateSubscriber(Node):
             return(angle)
     def joint_state_callback(self, msg):
         #self.get_logger().info('Received joint state message:')
-        angle = msg.position[0]
-        angle = self.multivalue(angle)
-        if angle < 1.0471975512 or angle > 5.23598775598 :
-            self.contact_stage()
+        angle1 = msg.position[0]
+        angle2 = msg.position[3]+3.14159265359
+        angle1 = self.multivalue(angle1)
+        angle2 = self.multivalue(angle2)
+        if angle1 < 1.0471975512 or angle1 > 5.23598775598 :
+            self.contact_stage(self.publisher1_)
             print("contact stage")
         else:
-            self.air_stage()
+            self.air_stage(self.publisher1_)
             print("air stage")
         
+        if angle2 < 1.0471975512 or angle2 > 5.23598775598 :
+            self.contact_stage(self.publisher2_)
+            print("contact stage")
+        else:
+            self.air_stage(self.publisher2_)
+            print("air stage")
     
 
 def main(args=None):
