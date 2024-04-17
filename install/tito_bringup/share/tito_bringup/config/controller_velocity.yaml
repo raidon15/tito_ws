@@ -35,10 +35,12 @@ velocity_controller2:
     state_interfaces:
       - position
       - velocity
+
 position_controller:
   ros__parameters:
     joints:
       - leg1_joint
+      - leg2_joint
     interface_name: position
     command_interfaces:
       - velocity
