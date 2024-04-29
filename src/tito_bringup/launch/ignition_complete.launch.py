@@ -33,12 +33,7 @@ def generate_launch_description():
     package_directory = get_package_share_directory(package_description)
 
     # Load URDF File #
-    urdf_file = 'tito.urdf'
-    robot_desc_path = os.path.join(package_directory, "urdf", urdf_file)
-
-
-    # Load URDF File #
-    urdf_file = 'tito.urdf'
+    urdf_file = 'tito_complete.urdf.xacro'
     robot_desc_path = os.path.join(package_directory, "urdf", urdf_file)     
     params = {'robot_description': Command(['xacro ', robot_desc_path]), 'use_sim_time': use_sim_time}
     print("URDF ignition Loaded !")
@@ -89,6 +84,14 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=['/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock'],
+        output='screen'
+    )
+    # Bridge
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=['/camera@sensor_msgs/msg/Image@gz.msgs.Image',
+                   '/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo'],
         output='screen'
     )
 

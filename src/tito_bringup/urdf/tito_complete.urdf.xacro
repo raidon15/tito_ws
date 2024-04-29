@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="tito">
+
+   
+
+    <xacro:include filename="tito_core.xacro" />
+
+    <xacro:include filename="camera.xacro" />
+
+    
+</robot>

@@ -10,7 +10,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
 
     ####### DATA INPUT ##########
-    urdf_file = 'tito.urdf'
+    urdf_file = 'tito_complete.urdf.xacro'
     #xacro_file = "urdfbot.xacro"
     package_description = "tito_bringup"
     ####### DATA INPUT END ##########
