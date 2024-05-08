@@ -73,9 +73,19 @@ def generate_launch_description():
         output='screen'
     )
 
-    load_velocity_controller = ExecuteProcess(
-        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
-             'controller_velocity'],
+    load_leg1_velocity_controller = ExecuteProcess(
+        cmd=['ros2', "run",'controller_manager', 'spawner', '--set-state', 'active',
+             'leg1'],
+        output='screen'
+    )
+    load_leg3_velocity_controller = ExecuteProcess(
+        cmd=['ros2',"run", 'controller_manager', 'spawner', '--set-state', 'active',
+             'leg3'],
+        output='screen'
+    )
+    load_leg5_velocity_controller = ExecuteProcess(
+        cmd=['ros2', "run",'controller_manager', 'spawner', '--set-state', 'active',
+             'leg5'],
         output='screen'
     )
 
@@ -116,7 +126,7 @@ def generate_launch_description():
         RegisterEventHandler(
             event_handler=OnProcessExit(
                 target_action=load_joint_state_controller,
-                on_exit=[load_velocity_controller],
+                on_exit=[load_leg1_velocity_controller,load_leg3_velocity_controller,load_leg5_velocity_controller],
             )
         ),
         node_robot_state_publisher,

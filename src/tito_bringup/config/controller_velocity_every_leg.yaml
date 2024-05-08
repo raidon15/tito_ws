@@ -1,0 +1,93 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    leg1:
+      type: velocity_controllers/JointGroupVelocityController
+    
+    leg2:
+      type: velocity_controllers/JointGroupVelocityController
+    
+    leg3:
+      type: velocity_controllers/JointGroupVelocityController
+
+    leg4:
+      type: velocity_controllers/JointGroupVelocityController
+    
+    leg5:
+      type: velocity_controllers/JointGroupVelocityController
+
+    leg6:
+      type: velocity_controllers/JointGroupVelocityController
+    
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+leg1:
+  ros__parameters:
+    joints:
+      - leg1_joint
+    interface_name: velocity
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+
+leg3:
+  ros__parameters:
+    joints:
+      - leg3_joint
+    interface_name: velocity
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+
+leg5:
+  ros__parameters:
+    joints:
+      - leg5_joint
+    interface_name: velocity
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+
+
+leg2:
+  ros__parameters:
+    joints:
+      - leg2_joint
+    interface_name: velocity
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+
+
+leg4:
+  ros__parameters:
+    joints:
+      - leg4_joint
+    interface_name: velocity
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+
+leg6:
+  ros__parameters:
+    joints:
+      - leg6_joint
+    interface_name: velocity
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity      

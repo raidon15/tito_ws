@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import JointState
 from std_msgs.msg import Float64MultiArray
+import math
 
 
 class JointStateSubscriber(Node):
@@ -13,46 +14,76 @@ class JointStateSubscriber(Node):
             self.joint_state_callback,  # callback function
             10  # QoS profile depth
         )
-        self.publisher1_ = self.create_publisher(Float64MultiArray, '/velocity_controller1/commands', 10)
-        self.publisher2_ = self.create_publisher(Float64MultiArray, '/velocity_controller2/commands', 10)
-        self.position_publisher_ = self.create_publisher(Float64MultiArray, '/position_controller/commands', 10)
+        self.publisher1_ = self.create_publisher(
+            Float64MultiArray, '/leg1/commands', 1)
+        self.publisher3_ = self.create_publisher(
+            Float64MultiArray, '/leg3/commands', 1)
+        self.publisher5_ = self.create_publisher(
+            Float64MultiArray, '/leg5/commands', 1)
+        self.publisher2_ = self.create_publisher(
+            Float64MultiArray, '/leg2/commands', 1)
+        self.publisher4_ = self.create_publisher(
+            Float64MultiArray, '/leg4/commands', 1)
+        self.publisher6_ = self.create_publisher(
+            Float64MultiArray, '/leg6/commands', 1)
+
+        self.position_publisher_ = self.create_publisher(
+            Float64MultiArray, '/position_controller/commands', 1)
         self.subscription  # prevent unused variable warning
 
-    def air_stage(self,publisher,velocity):
+    def air_stage(self, publisher, velocity):
         msg = Float64MultiArray()
-        msg.data = [velocity*7.5]  # Example velocity commands
+        msg.data = [velocity*2.5]  # Example velocity commands
         publisher.publish(msg)
-    def contact_stage(self,publisher,velocity):
+
+    def contact_stage(self, publisher, velocity):
         msg = Float64MultiArray()
-        msg.data = [velocity*1.5]  # Example velocity commands
+        msg.data = [velocity*0.5]  # Example velocity commands
         publisher.publish(msg)
-    def multivalue(self,angle):
+
+    def multivalue(self, angle):
         if angle > 6.28318530718:
             angle = angle - 6.28318530718
-            return(self.multivalue(angle))
+            return (self.multivalue(angle))
         else:
-            return(angle)
+            return (angle)
+
     def joint_state_callback(self, msg):
-        #self.get_logger().info('Received joint state message:')
+        # self.get_logger().info('Received joint state message:')
         angle1 = msg.position[0]
-        angle2 = msg.position[3]+3.14159265359
         angle1 = self.multivalue(angle1)
+        angle2 = msg.position[3] + math.pi
         angle2 = self.multivalue(angle2)
-        if angle1 < 1.0471975512 or angle1 > 5.23598775598 :
-            self.contact_stage(self.publisher1_,1)
-            print("contact stage")
+        print(angle2)
+        if angle1 < math.pi/3 or angle1 > 5*math.pi/3:
+            self.contact_stage(self.publisher1_, 1)
+            self.contact_stage(self.publisher3_, 1)
+            self.contact_stage(self.publisher5_, 1)
+
         else:
-            self.air_stage(self.publisher1_,1)
+
+            self.air_stage(self.publisher1_, 1)
+            self.air_stage(self.publisher3_, 1)
+            self.air_stage(self.publisher5_, 1)
+
+
+        if angle2 < math.pi/3 or angle2 > 5*math.pi/3:
+            
+            self.contact_stage(self.publisher2_, 1)
+            self.contact_stage(self.publisher4_, 1)
+            self.contact_stage(self.publisher6_, 1)
+            
             print("air stage")
-        
-        if angle2 < 1.0471975512 or angle2 > 5.23598775598 :
-            self.contact_stage(self.publisher2_,-1)
-            print("contact stage")
         else:
-            self.air_stage(self.publisher2_,-1)
-            print("air stage")
-    def acomodate_legs(self):
-        pass
+            self.air_stage(self.publisher2_, 1)
+            self.air_stage(self.publisher4_, 1)
+            self.air_stage(self.publisher6_, 1)
+            print("contact stage")
+
+
+def acomodate_legs(self):
+    pass
+
 
 def main(args=None):
     rclpy.init(args=args)
@@ -61,6 +92,7 @@ def main(args=None):
     rclpy.spin(joint_state_subscriber)
     joint_state_subscriber.destroy_node()
     rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()

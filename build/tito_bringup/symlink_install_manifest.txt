@@ -29,6 +29,7 @@
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//models/moon_diffuse.png
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//models/white_alpha.png
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//config/controller_velocity.yaml
+/home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup//config/controller_velocity_every_leg.yaml
 /home/benjamin/tito_ws/install/tito_bringup/share/ament_index/resource_index/package_run_dependencies/tito_bringup
 /home/benjamin/tito_ws/install/tito_bringup/share/ament_index/resource_index/parent_prefix_path/tito_bringup
 /home/benjamin/tito_ws/install/tito_bringup/share/tito_bringup/environment/ament_prefix_path.sh
