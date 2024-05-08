@@ -17,6 +17,8 @@ find_package(pluginlib REQUIRED)
 find_package(ign_ros2_control REQUIRED)
 find_package(joint_state_broadcaster REQUIRED)
 find_package(joint_trajectory_controller REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -38,4 +40,11 @@ install(
     share/${PROJECT_NAME}/
 )
 
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "action/Move.action"
+)
+
 ament_package()
+
+

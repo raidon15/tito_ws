@@ -8,11 +8,13 @@
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
  
- 
+  <member_of_group>rosidl_interface_packages</member_of_group>
+  
   <depend>hardware_interface</depend>
   <depend>urdf</depend>
   <depend>xacro</depend>
@@ -22,8 +24,14 @@
   <depend>joint_state_broadcaster</depend>
   <depend>joint_trajectory_controller</depend>
   <depend>velocity_controllers</depend>
+  <depend>action_msgs</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
   </export>
 </package>
+
+
+
+
+

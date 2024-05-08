@@ -313,6 +313,60 @@ message(STATUS "Execute custom install script")
 # install(DIRECTORY "urdf" "rviz" "launch" "worlds" "models" "config" "DESTINATION" "share/tito_bringup/")
 ament_cmake_symlink_install_directory("/home/benjamin/tito_ws/src/tito_bringup" DIRECTORY "urdf" "rviz" "launch" "worlds" "models" "config" "DESTINATION" "share/tito_bringup/")
 
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/tito_bringup" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/tito_bringup" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
+
+# install(DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_generator_c/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN" "*.h")
+ament_cmake_symlink_install_directory("/home/benjamin/tito_ws/src/tito_bringup" DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_generator_c/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN" "*.h")
+
+# install(FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/tito_bringup/environment")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/tito_bringup/environment")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/tito_bringup/environment")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/tito_bringup/environment")
+
+# install(DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_typesupport_fastrtps_c/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN_EXCLUDE" "*.cpp")
+ament_cmake_symlink_install_directory("/home/benjamin/tito_ws/src/tito_bringup" DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_typesupport_fastrtps_c/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN_EXCLUDE" "*.cpp")
+
+# install(DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_generator_cpp/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN" "*.hpp")
+ament_cmake_symlink_install_directory("/home/benjamin/tito_ws/src/tito_bringup" DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_generator_cpp/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN" "*.hpp")
+
+# install(DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_typesupport_fastrtps_cpp/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN_EXCLUDE" "*.cpp")
+ament_cmake_symlink_install_directory("/home/benjamin/tito_ws/src/tito_bringup" DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_typesupport_fastrtps_cpp/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN_EXCLUDE" "*.cpp")
+
+# install(DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_typesupport_introspection_c/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN" "*.h")
+ament_cmake_symlink_install_directory("/home/benjamin/tito_ws/src/tito_bringup" DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_typesupport_introspection_c/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN" "*.h")
+
+# install(DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_typesupport_introspection_cpp/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN" "*.hpp")
+ament_cmake_symlink_install_directory("/home/benjamin/tito_ws/src/tito_bringup" DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_typesupport_introspection_cpp/tito_bringup/" "DESTINATION" "include/tito_bringup/tito_bringup" "PATTERN" "*.hpp")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/tito_bringup/environment")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/tito_bringup/environment")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/tito_bringup/environment")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/tito_bringup/environment")
+
+# install(DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_python/tito_bringup/tito_bringup.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/tito_bringup-0.0.0-py3.10.egg-info")
+ament_cmake_symlink_install_directory("/home/benjamin/tito_ws/src/tito_bringup" DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_python/tito_bringup/tito_bringup.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/tito_bringup-0.0.0-py3.10.egg-info")
+
+# install(DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_generator_py/tito_bringup/" "DESTINATION" "local/lib/python3.10/dist-packages/tito_bringup" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+ament_cmake_symlink_install_directory("/home/benjamin/tito_ws/src/tito_bringup" DIRECTORY "/home/benjamin/tito_ws/build/tito_bringup/rosidl_generator_py/tito_bringup/" "DESTINATION" "local/lib/python3.10/dist-packages/tito_bringup" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+
+# install("TARGETS" "tito_bringup__rosidl_typesupport_fastrtps_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/tito_bringup")
+include("/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+
+# install("TARGETS" "tito_bringup__rosidl_typesupport_introspection_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/tito_bringup")
+include("/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_symlink_install_targets_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+
+# install("TARGETS" "tito_bringup__rosidl_typesupport_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/tito_bringup")
+include("/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/rosidl_adapter/tito_bringup/action/Move.idl" "DESTINATION" "share/tito_bringup/action")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/rosidl_adapter/tito_bringup/action/Move.idl" "DESTINATION" "share/tito_bringup/action")
+
+# install(FILES "/home/benjamin/tito_ws/src/tito_bringup/action/Move.action" "DESTINATION" "share/tito_bringup/action")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/src/tito_bringup/action/Move.action" "DESTINATION" "share/tito_bringup/action")
+
 # install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/tito_bringup" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/tito_bringup" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
@@ -348,6 +402,27 @@ ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILE
 
 # install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_index/share/ament_index/resource_index/packages/tito_bringup" "DESTINATION" "share/ament_index/resource_index/packages")
 ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_index/share/ament_index/resource_index/packages/tito_bringup" "DESTINATION" "share/ament_index/resource_index/packages")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+
+# install(FILES "/home/benjamin/tito_ws/build/tito_bringup/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
+ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/tito_bringup/cmake")
 
 # install(FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_core/tito_bringupConfig.cmake" "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_core/tito_bringupConfig-version.cmake" "DESTINATION" "share/tito_bringup/cmake")
 ament_cmake_symlink_install_files("/home/benjamin/tito_ws/src/tito_bringup" FILES "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_core/tito_bringupConfig.cmake" "/home/benjamin/tito_ws/build/tito_bringup/ament_cmake_core/tito_bringupConfig-version.cmake" "DESTINATION" "share/tito_bringup/cmake")
