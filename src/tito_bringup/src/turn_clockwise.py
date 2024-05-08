@@ -26,9 +26,13 @@ class JointStateSubscriber(Node):
             Float64MultiArray, '/leg4/commands', 1)
         self.publisher6_ = self.create_publisher(
             Float64MultiArray, '/leg6/commands', 1)
-
-        self.position_publisher_ = self.create_publisher(
-            Float64MultiArray, '/position_controller/commands', 1)
+        self.publisher_position_tripod1 = self.create_publisher(
+            Float64MultiArray, '/position_controller1/commands', 1)
+        self.publisher_position_tripod2 = self.create_publisher(
+            Float64MultiArray, '/position_controller2/commands', 1)
+        
+        self.acomodate_legs()
+        
         self.subscription  # prevent unused variable warning
 
     def air_stage(self, publisher, velocity):
@@ -66,13 +70,12 @@ class JointStateSubscriber(Node):
             self.air_stage(self.publisher3_, 1)
             self.air_stage(self.publisher5_, 1)
 
-
         if angle2 < math.pi/3 or angle2 > 5*math.pi/3:
-            
+
             self.contact_stage(self.publisher2_, 1)
             self.contact_stage(self.publisher4_, 1)
             self.contact_stage(self.publisher6_, 1)
-            
+
             print("air stage")
         else:
             self.air_stage(self.publisher2_, 1)
@@ -80,9 +83,12 @@ class JointStateSubscriber(Node):
             self.air_stage(self.publisher6_, 1)
             print("contact stage")
 
-
-def acomodate_legs(self):
-    pass
+    def acomodate_legs(self):
+        print("acomodating legs")
+        msg = Float64MultiArray()
+        msg.data = [0.0,0.0,0.0]
+        self.publisher_position_tripod1.publish(msg)
+        self.publisher_position_tripod2.publish(msg)
 
 
 def main(args=None):

@@ -20,6 +20,11 @@ controller_manager:
     leg6:
       type: velocity_controllers/JointGroupVelocityController
     
+    position_controller1:
+      type: position_controllers/JointGroupPositionController
+    position_controller2:
+      type: position_controllers/JointGroupPositionController
+    
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -91,3 +96,31 @@ leg6:
     state_interfaces:
       - position
       - velocity      
+
+position_controller1:
+  ros__parameters:
+    joints:
+      - leg1_joint
+      - leg3_joint
+      - leg5_joint
+
+      
+    interface_name: position
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+
+position_controller2:
+  ros__parameters:
+    joints:
+      - leg2_joint
+      - leg4_joint
+      - leg6_joint
+    interface_name: position
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
